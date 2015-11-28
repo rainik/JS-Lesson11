@@ -1,0 +1,35 @@
+атрибут "id" - Его значение уникальное для документа
+
+document.getElementById(id)" возвращает элемент с данным "id". Если не найден, то null:
+
+"elem.getElementsByTagName(tag)" ищет все элементы с заданным тегом "tag" внутри элемента "elem" и возвращает их в виде списка
+// Получить все div-элементы
+var elems = document.getElementsByTagName("div");
+// Получить все div-элементы внутри элемента с id="info"
+var elem = document.getElementById("info");
+var elems = elem.getElementsByTagName("div");
+
+Вызов "document.getElementsByName(name)" позволяет получить все элементы с данным атрибутом "name":
+<input name="test" />
+var elems = document.getElementsByName("test");
+
+Вызов "elem.getElementsByClassName(className)" возвращает массив элементов с классом "className" внутри элемента "elem". Находит элемент и в том случае, если у него несколько классов, а искомый – один из них ("article" & "long article" - вернет оба класса).
+
+"newElem = elem.cloneNode(true)" – клонирует элемент "elem" вместе с атрибутами, включая вложенные в него узлы
+"newElem = elem.cloneNode(false)" – клонирует элемент "elem" вместе с атрибутами, но без вложенных в него узлов
+
+метод: "parentElem.appendChild(elem)" – добавляет "elem" в список дочерних элементов "parentElem". Новый узел добавляется в конец списка
+
+"parentElem.insertBefore(elem, nextSibling)" – вставляет "elem" в список дочерних "parentElem", перед элементом "nextSibling"
+
+Существует много видов событий:
+DOM-события, которые инициализируются элементами DOM. Например:
+Событие click происходит, когда кликнули на элемент
+Событие mouseover – когда на элемент наводится мышь.
+Событие focus – когда посетитель фокусируется на элементе.
+Событие keydown – когда посетитель нажимает клавишу.
+События для окна браузера. Например, resize – когда изменяется размер окна
+Есть загрузки файла/документа: load, readystatechange, DOMContentLoaded…
+
+
+

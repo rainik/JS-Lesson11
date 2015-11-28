@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Создание узлов. Добавление узлов</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   </head>
+   <body>
+      <form>
+         Имя: <input type="text" name="name" /><br />
+         Возраст: <input type="text" name="age" /><br />
+      </form>
+      <script>
+         // Ваш код
+		 //1. Создайте кнопку для отправки данных формы;
+		 //2. Добавьте созданную кнопку в конец формы.
+		 var parentElem = document.body.children[0];
+		 var newButton = document.createElement("input");
+		 function sayHello() { 
+			alert ("Hello! Your form was sent!");
+		 }
+		 newButton.setAttribute("type", "button");
+		 newButton.setAttribute("id", "sendform");
+		 newButton.setAttribute("value", "Кнопка");
+		 newButton.setAttribute("onclick", "sayHello()");		 
+		 parentElem.appendChild(newButton);
+      </script>
+   </body>
+</html>

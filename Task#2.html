@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Поиск узлов</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   </head>
+   <body>
+      <form name="search">
+         <label>Поиск по сайту: <input type="text" name="search" /></label>
+         <input type="submit" value="Искать!" />
+      </form>
+      <hr />
+      <form name="search-person">
+         Поиск по посетителям:
+         <table id="age-table">
+         <tr>
+            <td>Возраст:</td>
+            <td id="age-list">
+               <label><input type="radio" name="age" value="young" />до 18</label>
+               <label><input type="radio" name="age" 
+value="mature" />18-50</label>
+               <label><input type="radio" name="age" value="senior" />более 50</label>
+            </td>
+         </tr>
+         <tr>
+            <td>Дополнительно:</td>
+            <td>
+               <input type="text" name="info[0]" />
+               <input type="text" name="info[1]" />
+               <input type="text" name="info[2]" />
+            </td>
+         </tr>
+         </table>
+         <input type="submit" value="Искать!" />
+      </form>
+      <script>
+         // Ваш код
+		 var tabParent = document.getElementById("age-table");
+		 var tabParentInsId = document.getElementById("age-list");
+		 //1. Все элементы <label> внутри таблицы. Должно быть 3 элемента;
+		 var labelElems = tabParent.getElementsByTagName("label");
+		 // 2. Первую ячейку таблицы (с текстом Возраст:);
+		 var tableTdTagName = tabParent.getElementsByTagName("td");
+		 var firstTd = tableTdTagName[0].innerHTML;
+		 //3. Вторую форму в документе;
+		 var secondForm = document.body.getElementsByTagName("form")[1];
+		 //4. Форму с именем "search", без использования её позиции в документе;
+		 var searchForm = document.getElementsByName("search")[0];
+		 // 5. Элемент <input> в форме с именем "search";
+		 var varInp = searchForm.getElementsByTagName("input");
+		 // 6. Элемент с именем "info[0]", без точного знания его позиции в документе;		 
+		 var infoNull = document.getElementsByName("info[0]")[0];
+
+		 // 7. Элемент с именем "info[0]", внутри формы с именем "search-person";
+		 var searchPersForm = document.getElementsByName("search-person");
+		 var infoNullbyForm = searchPersForm[0].getElementsByTagName("input")[3];
+
+		 // 8. Выведите значения переменных на экран.
+		 alert ("Посчитали все элементы <label> " + labelElems.length); //1
+		 alert("Вывели первую ячейку таблицы с текстом 'возраст' " + firstTd); //2
+		 alert("Вторая форма в документе " + secondForm.innerHTML); //3
+		 alert("Форма с именем 'search' " + searchForm.innerHTML); //4
+		 alert("Элемент <input> в форме с именем search " + varInp[0]); //5 вывел первый элемент input, т.к. там их два, а в задании не понятно, какой конкретно из них выводить.
+		 alert("Элемент с именем info[0] " + infoNull); //6
+		 alert("Элемент с именем info[0] внутри формы 'search-person' " + infoNullbyForm); //7
+	  </script>
+   </body>
+</html>

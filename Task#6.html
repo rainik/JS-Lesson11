@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>События</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   </head>
+   <body>
+      <button>Нажмите, чтобы спрятать текст</button>
+      <p id="hide">Текст</p>
+      <script>
+         // Ваш код
+		 // 1. Сделайте так, чтобы при клике на кнопку исчезал элемент с идентификатором "hide".
+		 var butt = document.body.children[0];
+		 var hidden = document.getElementById("hide");
+		 butt.onclick = function() {
+			document.body.removeChild(hidden);
+		 }
+      </script>
+   </body>
+</html>
